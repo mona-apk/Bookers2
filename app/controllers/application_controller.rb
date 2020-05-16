@@ -4,7 +4,6 @@ class ApplicationController < ActionController::Base
 
 	#sign in後のリダイレクト
 	def after_sign_in_path_for(resource)
-		#TODO: パスの変更
 		user_path(resource)
 	end
 

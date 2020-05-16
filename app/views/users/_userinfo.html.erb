@@ -1,0 +1,17 @@
+<div class="User_Info">
+  <h2>User Info</h2>
+  <img src="" alt="">
+  <div class="user_name">
+    <h4>name</h4>
+    <p class="text_center"><%= user.name %></p>
+  </div>
+  <div class="user_introduction">
+    <h4>introduction</h4>
+    <p class="text_center"><%= user.introduction %></p>
+  </div>
+  <div class="user_edit_btn">
+    <%= link_to edit_user_path(user.id) do %>
+      編集
+    <% end %>
+  </div>
+</div>

@@ -1,6 +1,8 @@
 <div class="User_Info">
   <h2>User Info</h2>
-  <img src="" alt="">
+  <div class="">
+    <%= attachment_image_tag user, :profile_image, :fill, 60, 60, format: 'jpeg', class: " profile-img", fallback: "no_image.jpg" %>
+  </div>
   <div class="user_name">
     <h4>name</h4>
     <p class="text_center"><%= user.name %></p>

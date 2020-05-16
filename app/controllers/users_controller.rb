@@ -5,6 +5,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @book = Book.new
+    #TODO: current userのbookのみを表示
     @books = Book.all
   end
 

@@ -1,0 +1,12 @@
+<div class="">
+  <h2>Books</h2>
+  <ul>
+    <% books.each do |book| %>
+      <li>
+        <%= book.title %>
+        <%= book.body %>
+        <%= book.user_id %>
+      </li>
+    <% end %>
+  </ul>
+</div>

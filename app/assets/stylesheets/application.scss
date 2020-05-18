@@ -16,8 +16,6 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
 
-
-/* detail book */
 /* header */
 .header {
   background-color: rgb(255, 228, 225);
@@ -31,6 +29,10 @@
 }
 
 /*** common ***/
+/* space */
+.height1 {
+  height: 20px;
+}
 /* button */
 .w_btn .btn {
   width: 100%;

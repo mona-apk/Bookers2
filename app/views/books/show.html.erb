@@ -1,2 +1,13 @@
-<h1>Books#show</h1>
-<p>Find me in app/views/books/show.html.erb</p>
+<%= render 'users/userinfo', user: @user %>
+<%= render 'books/add_new_book', book: @new_book%>
+<div class="">
+  <h2>Book detail</h2>
+  <%= link_to user_path(@user) do %>
+    <%= attachment_image_tag @user , :profile_image, :fill, 60, 60, format: 'jpeg', class: " profile-img", fallback: "no_image.jpg" %>
+    <%= @user.name %>
+  <% end %>
+  <%= @book.title %>
+  <%= @book.body %>
+  <%= link_to "edit", edit_book_path(@book)%>
+  <%= link_to "delete", book_path(@book), method: :delete %>
+</div>

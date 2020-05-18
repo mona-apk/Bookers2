@@ -1,8 +1,7 @@
 <div class="Add_Book">
   <h2>New book</h2>
   <!--TODO: change path -->
-  <%= form_for(book, url: books_path) do |f| %>
-    <!--TODO: error messagesの表示 -->
+  <%= form_for(book) do |f| %>
     <div class="row">
       <div class="col-xs-12">
         <%= f.label :title %><br />

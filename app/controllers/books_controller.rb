@@ -11,6 +11,10 @@ class BooksController < ApplicationController
   end
 
   def index
+    @user = User.find(current_user.id)
+    @users = User.all
+    @books = Book.all.sort_by{ |b| b.user_id }
+    @book = Book.new
   end
 
   def show

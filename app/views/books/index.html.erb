@@ -1,2 +1,16 @@
-<h1>Books#index</h1>
-<p>Find me in app/views/books/index.html.erb</p>
+<%= render 'users/userinfo', user: @user %>
+<%= render 'books/add_new_book', book: @book%>
+<div class="">
+  <h2>Books</h2>
+  <ul>
+    <% @books.each do |book| %>
+      <li>
+        <div class="">
+          <%= attachment_image_tag @users.find{|u| u.id == book.user_id } , :profile_image, :fill, 60, 60, format: 'jpeg', class: " profile-img", fallback: "no_image.jpg" %>
+        </div>
+        <%= book.title %>
+        <%= book.body %>
+      </li>
+    <% end %>
+  </ul>
+</div>

@@ -3,6 +3,9 @@
   <ul>
     <% books.each do |book| %>
       <li>
+        <div class="">
+          <%= attachment_image_tag user, :profile_image, :fill, 60, 60, format: 'jpeg', class: " profile-img", fallback: "no_image.jpg" %>
+        </div>
         <%= book.title %>
         <%= book.body %>
         <%= book.user_id %>

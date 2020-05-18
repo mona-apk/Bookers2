@@ -9,7 +9,7 @@
   <%= @book.title %>
   <%= @book.body %>
   <% if @user.id == current_user.id %>
-    <p><%= link_to "edit", edit_book_path(@book)%></p>
-    <p><%= link_to "delete", book_path(@book), method: :delete, data: { confirm: '削除しますか？' } %></p>
+    <p><%= link_to "Edit", edit_book_path(@book)%></p>
+    <p><%= link_to "Destroy", book_path(@book), method: :delete, data: { confirm: '削除しますか？' } %></p>
   <% end %>
 </div>

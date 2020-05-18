@@ -6,7 +6,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @book = Book.new
     #TODO: current userのbookのみを表示
-    @books = Book.all
+    @books = @user.books.all
   end
 
   def edit

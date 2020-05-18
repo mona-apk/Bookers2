@@ -16,6 +16,8 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
 
+
+/* detail book */
 /* header */
 .header {
   background-color: rgb(255, 228, 225);
@@ -76,7 +78,7 @@
 }
 
 /* user info */
-.user_heading > h4 {
+.user_heading h4 {
   font-size: 20px;
   margin-bottom: 5px;
   font-weight: bold;
@@ -90,4 +92,40 @@
 }
 .new_book_wrap input,textarea {
   width: 100%;
+}
+
+/* detail book */
+.book_detail_box {
+  width: 100%;
+  display: flex;
+  border-top: 2px #ddd solid;
+}
+.mini_profile {
+  display: flex;
+  width: 10%;
+  justify-content: center;
+  flex-direction: column;
+  text-align:center;
+}
+.mini_profile img{
+  display: block;
+  margin: 0 auto;
+  width: 50px;
+  height: 50px;
+}
+.detail_title {
+  width: 30%;
+  padding-left: 5%;
+  padding-top: 20px;
+}
+.detail_opinion {
+  width: 30%;
+  padding-left: 2%;
+  padding-top: 20px;
+}
+.detail_button_box {
+  width: 30%;
+  display: flex;
+  justify-content: space-around;
+  padding-top: 20px;
 }

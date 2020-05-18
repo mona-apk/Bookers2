@@ -6,9 +6,10 @@
         <div class="">
           <%= attachment_image_tag user, :profile_image, :fill, 60, 60, format: 'jpeg', class: " profile-img", fallback: "no_image.jpg" %>
         </div>
-        <%= book.title %>
+        <%= link_to book_path(book) do %>
+          <%= book.title %>
+        <% end %>
         <%= book.body %>
-        <%= book.user_id %>
       </li>
     <% end %>
   </ul>

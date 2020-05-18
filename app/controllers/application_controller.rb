@@ -1,5 +1,4 @@
 class ApplicationController < ActionController::Base
-	before_action :authenticate_user!
 	before_action :configure_permitted_parameters, if: :devise_controller?
 
 	#sign in後のリダイレクト
@@ -9,8 +8,7 @@ class ApplicationController < ActionController::Base
 
 	#sign out後のリダイレクト
 	def after_sign_out_path_for(resource)
-		#TODO: パスの変更
-		new_book_path
+		root_path
 	end
 
 	protected

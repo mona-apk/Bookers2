@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
+  get 'home/about'
+  get 'home/index'
   #TODO: ルートの作成
-  root "books#index"
+  root "home#index"
   resources :books
   devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

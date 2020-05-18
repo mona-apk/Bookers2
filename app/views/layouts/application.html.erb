@@ -55,10 +55,13 @@
         </div>
       </nav>
     </div>
+    <div class="container">
+      <!-- notice -->
+      <%= render 'layouts/notifications'%>
+      <!-- main -->
+      <%= yield %>
+    </div>
 
-    <!-- notice -->
-    <%= render 'layouts/notifications' %>
 
-    <%= yield %>
   </body>
 </html>

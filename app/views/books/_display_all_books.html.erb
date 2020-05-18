@@ -1,15 +1,29 @@
 <div class="">
   <h2>Books</h2>
-  <ul>
+  <ul class="list_container">
+    <div class="list_heading">
+      <div class="list_space1">
+      </div>
+      <div class="list_space2">
+        Title
+      </div>
+      <div class="list_space3">
+        Opinion
+      </div>
+    </div>
     <% books.each do |book| %>
       <li>
-        <div class="">
-          <%= attachment_image_tag user, :profile_image, :fill, 60, 60, format: 'jpeg', class: " profile-img", fallback: "no_image.jpg" %>
+        <div class="item_img">
+          <%= attachment_image_tag user, :profile_image, :fill, 30, 30, format: 'jpeg', class: " profile-img", fallback: "no_image.jpg" %>
         </div>
-        <%= link_to book_path(book) do %>
-          <%= book.title %>
-        <% end %>
-        <%= book.body %>
+        <div class="item_heading">
+          <%= link_to book_path(book) do %>
+            <%= book.title %>
+          <% end %>
+        </div>
+        <div class="item_sub">
+          <%= book.body %>
+        </div>
       </li>
     <% end %>
   </ul>

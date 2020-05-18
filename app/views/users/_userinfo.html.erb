@@ -3,15 +3,17 @@
   <div class="">
     <%= attachment_image_tag user, :profile_image, :fill, 60, 60, format: 'jpeg', class: " profile-img", fallback: "no_image.jpg" %>
   </div>
-  <div class="user_name">
+  <div class="user_heading">
     <h4>name</h4>
     <p class="text_center"><%= user.name %></p>
   </div>
-  <div class="user_introduction">
+  <div class="user_heading">
     <h4>introduction</h4>
-    <p class="text_center"><%= user.introduction %></p>
+    <p class="text_center"><%= user.introduction %> </p>
   </div>
-  <div class="user_edit_btn">
-    <%= link_to '編集', edit_user_path(user.id), class: "btn btn-default" %>
-  </div>
+  <% if user.id == current_user.id %>
+    <div class="w_btn">
+      <%= link_to 'Edit', edit_user_path(user.id), class: "btn btn-default" %>
+    </div>
+  <% end %>
 </div>

@@ -16,15 +16,78 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
 
+/* header */
 .header {
   background-color: rgb(255, 228, 225);
 }
-
-.navbar-header > h2{
+.navbar-header h2{
   margin-top: 10px;
 }
-
-.navbar-nav > li > a {
+.navbar-nav li a {
   height: 55px;
   margin-top: -2px;
+}
+
+/*** common ***/
+/* button */
+.w_btn .btn {
+  width: 100%;
+}
+/* list */
+.list_container {
+   list-style-type: none;
+   padding-left: 0;
+}
+.list_container li{
+  width: 100%;
+  display: flex;
+  border-top: 2px #ddd solid;
+}
+.list_container .item_img {
+  width: 10%;
+}
+.list_container .item_heading {
+  width: 45%;
+  line-height: 50px;
+}
+.list_container .item_sub {
+  width: 45%;
+  padding-top: 5px;
+}
+.list_container img {
+  width: 50px;
+  height: 50px;
+}
+.list_heading {
+  width: 100%;
+  display: flex;
+  font-size: 16px;
+  font-weight: bold;
+  padding-bottom: 5px;
+}
+.list_space1 {
+  width: 10%;
+}
+.list_space2 {
+  width: 45%;
+}
+.list_space3 {
+  width: 45%;
+}
+
+/* user info */
+.user_heading > h4 {
+  font-size: 20px;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+/* new book */
+.new_book_wrap {
+  margin-bottom: 10px;
+}
+.new_book_wrap label {
+  font-size: 16px;
+}
+.new_book_wrap input,textarea {
+  width: 100%;
 }

@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   get 'home/about'
-  get 'home/index'
   #TODO: ルートの作成
   root "home#index"
   resources :books

@@ -1,22 +1,41 @@
-<%= render "devise/shared/error_messages", resource: @book %>
-<%= render 'users/userinfo', user: @user %>
-<%= render 'books/add_new_book', book: @book%>
-<div class="">
-  <h2>Books</h2>
-  <ul>
-    <% @books.each do |book| %>
-      <li>
-        <div class="">
-          <% u = @users.find{|u| u.id == book.user_id} %>
-          <%= link_to user_path(u) do %>
-            <%= attachment_image_tag u , :profile_image, :fill, 60, 60, format: 'jpeg', class: " profile-img", fallback: "no_image.jpg" %>
-          <% end %>
+<div class="row">
+  <%= render "devise/shared/error_messages", resource: @book %>
+  <div class="col-xs-3">
+    <%= render 'users/userinfo', user: @user %>
+    <%= render 'books/add_new_book', book: @book%>
+  </div>
+  <div class="col-xs-9">
+    <h2>Books</h2>
+    <ul class="list_container">
+      <div class="list_heading">
+        <div class="list_space1">
+
         </div>
-        <%= link_to book_path(book) do %>
-          <%= book.title %>
-        <% end %>
-        <%= book.body %>
-      </li>
-    <% end %>
-  </ul>
+        <div class="list_space2">
+          Title
+        </div>
+        <div class="list_space3">
+          Opinion
+        </div>
+      </div>
+      <% @books.each do |book| %>
+        <li>
+          <div class="item_img">
+            <% u = @users.find{|u| u.id == book.user_id} %>
+            <%= link_to user_path(u) do %>
+              <%= attachment_image_tag u , :profile_image, :fill, 60, 60, format: 'jpeg', class: " profile-img", fallback: "no_image.jpg" %>
+            <% end %>
+          </div>
+          <div class="item_heading">
+            <%= link_to book_path(book) do %>
+              <%= book.title %>
+            <% end %>
+          </div>
+          <div class="item_sub">
+            <%= book.body %>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
 </div>

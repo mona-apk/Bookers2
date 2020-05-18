@@ -1,16 +1,34 @@
-<%= render 'users/userinfo', user: @user %>
-<%= render 'books/add_new_book', book: @book%>
-<div class="">
-  <h2>Users</h2>
-  <ul>
-    <% @users.each do |user| %>
-      <li>
-        <div class="">
-          <%= attachment_image_tag user, :profile_image, :fill, 60, 60, format: 'jpeg', class: " profile-img", fallback: "no_image.jpg" %>
+<div class="row">
+  <div class="col-xs-3">
+    <%= render 'users/userinfo', user: @user %>
+    <%= render 'books/add_new_book', book: @book%>
+  </div>
+  <div class="col-xs-9">
+    <h2>Users</h2>
+    <ul class="list_container">
+      <div class="list_heading">
+        <div class="list_space1">
+          image
         </div>
-        <%= user.name %>
-        <%= link_to "Show", user_path(user)%>
-      </li>
-    <% end %>
-  </ul>
+        <div class="list_space2">
+          name
+        </div>
+        <div class="list_space3">
+        </div>
+      </div>
+      <% @users.each do |user| %>
+        <li>
+          <div class="item_img">
+            <%= attachment_image_tag user, :profile_image, :fill, 60, 60, format: 'jpeg', class: " profile-img", fallback: "no_image.jpg" %>
+          </div>
+          <div class="item_heading">
+            <%= user.name %>
+          </div>
+          <div class="item_sub">
+            <%= link_to "Show", user_path(user)%>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
 </div>

@@ -6,8 +6,10 @@ class BooksController < ApplicationController
     if @book.save
       redirect_to user_path(current_user)
     else
-      #TODO: エラーメッセージの実装
-      #render :new
+      @user = User.find(current_user.id)
+      @users = User.all
+      @books = Book.all.sort_by{ |b| b.user_id }
+      render :index
     end
   end
 

@@ -22,7 +22,6 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    #TODO: permitの再確認
     params.require(:user).permit(:name, :introduction, :profile_image)
   end
 end

@@ -6,9 +6,14 @@
     <% @books.each do |book| %>
       <li>
         <div class="">
-          <%= attachment_image_tag @users.find{|u| u.id == book.user_id } , :profile_image, :fill, 60, 60, format: 'jpeg', class: " profile-img", fallback: "no_image.jpg" %>
+          <% u = @users.find{|u| u.id == book.user_id} %>
+          <%= link_to user_path(u) do %>
+            <%= attachment_image_tag u , :profile_image, :fill, 60, 60, format: 'jpeg', class: " profile-img", fallback: "no_image.jpg" %>
+          <% end %>
         </div>
-        <%= book.title %>
+        <%= link_to user_path(u) do %>
+          <%= book.title %>
+        <% end %>
         <%= book.body %>
       </li>
     <% end %>
